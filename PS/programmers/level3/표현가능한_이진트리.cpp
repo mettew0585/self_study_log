@@ -1,3 +1,7 @@
+//230905
+//https://school.programmers.co.kr/learn/courses/30/lessons/150367
+//divide and conquer
+
 #include <string>
 #include <vector>
 #include <algorithm>
