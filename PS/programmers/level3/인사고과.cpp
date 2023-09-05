@@ -1,5 +1,6 @@
 //230905
 //https://school.programmers.co.kr/learn/courses/30/lessons/152995
+//sorting
 
 #include <string>
 #include <vector>
