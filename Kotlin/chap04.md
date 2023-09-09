@@ -66,9 +66,21 @@ abstract class Animated{
 
 
 
-|제목|내용|설명|
-|------|---|---|
-|테스트1|테스트2|테스트3|
-|테스트1|테스트2|테스트3|
-|테스트1|테스트2|테스트3|
+```kotlin
+internal open class TalkativeButton : Focusable{
+  private fun yell() = println("Hey!")
+  protected fun whisper() = println("Let's talk")
+}
+
+fun TalkativeButton.giveSpeech() { // 오류, public 멤버가 internal 수신 타입인 'TalkativeButton을 호출함'
+  yell()  // yell을 접근할 수 없음. yell은 TalkativeButton의 private 멤버임
+  whisper() // whisper에 접근할 수 없음. whisper는 TalkativeButton의 protected 멤버임.
+}
+```
+
+코틀린은 public함수인 giveSpeech 안에서 그보다 가시성이 더 낮은 타입인 TalkativeButton을 참조하지 못하게 한다. 
+
+이런 규칙은 어떤 함수를 호출하거나 어떤 클래스를 확장할 때 필요한 모든 타입에 접근할 수 있게 보장해준다.
+
+
 
