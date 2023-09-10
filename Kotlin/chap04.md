@@ -88,6 +88,27 @@ fun TalkativeButton.giveSpeech() { // 오류, public 멤버가 internal 수신 �
 - 상속을 허용하지 않는 클래스에 새로운 동작을 추가해야 될 때가 잇음
 - 이럴때 사용하는 일반적인 방법이 데코레이터 패턴
   - 데코레이터 패턴 : 상속을 허용하지 않는 클래스(기존 클래스) 대신 사용할 수 있는 새로운 클래스(데코레이터)를 만들되 기존 클래스와 같은 인터페이스를 데코레이터가 제공하게 만들고, 기존 클래스를 데코레이터 내부에 필드로 유지하는 것. 이때 새로 정의 해야 되는 기능은 데코레이터의 메소드에 새로 정의하고 기존 기능이 그대로 필요한 부분은 데코레이터의 메소드가 기존 클래스의 메소드에게 요청을 전달한다.
+  - 데코레이터 패턴의 단점 : 준비코드가 상당히 많이 필요하다. Collection 같이 단순한 인터페이스를 구현하면서 아무 동작도 변경하지 않는 데코레이터를 만들 때 조차도 다음과 같이 복잡한 코드를 작성해야 함.
+  
+```kotlin
 
+class DelegatingCollection<T> : Collection<T> {
+  private val innerList = arrayListOf<T>()
 
+  override val size : Int get() = innerList.size
+  override fun isEmpty() : Boolean = innerList.isEmpty()
+  override fun contains(elements : T) : Boolean = innerList.contains(element)
+  override fun iterator() : Iterator<T> = innerList.iterator()
+  override fun containsAll(elements : Collection<T>) : Boolean =
+    innerList.containsAll(elements)
+}
+```
+
+=> 인터페이스를 구현할 때 by 키워드를 통해 그 인터페이스에 대한 구현을 다른 객체에 위임 중이라는 사실을 명시할 수 있다. 
+
+```kotlin
+class DelegatingCollection<T> (
+  innerList : Collection<T> = ArrayList<T> ()
+) : Collection<T> by innerList  {}
+```
 
