@@ -4,4 +4,6 @@
 
 - project overview  https://developer.android.com/studio/projects#groovy
 - build system https://developer.android.com/build
-- jetpack compose https://developer.android.com/kotlin/first?hl=ko
+- jetpack compose
+  - https://developer.android.com/kotlin/first?hl=ko
+  - https://developer.android.com/jetpack/compose?hl=ko
