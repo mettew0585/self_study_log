@@ -7,3 +7,4 @@
 - jetpack compose
   - https://developer.android.com/kotlin/first?hl=ko
   - https://developer.android.com/jetpack/compose?hl=ko
+  - https://www.youtube.com/watch?v=6_wK_Ud8--0
