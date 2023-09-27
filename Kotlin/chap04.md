@@ -111,4 +111,4 @@ class DelegatingCollection<T> (
   innerList : Collection<T> = ArrayList<T> ()
 ) : Collection<T> by innerList  {}
 ```
-
+reference : https://velog.io/@haero_kim/Kotlin-by-키워드의-역할-알아보기
