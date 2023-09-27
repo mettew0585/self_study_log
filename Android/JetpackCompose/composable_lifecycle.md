@@ -5,7 +5,7 @@ reference : https://developer.android.com/jetpack/compose/lifecycle?hl=ko
 
 
 ### 개요
-https://developer.android.com/static/images/jetpack/compose/lifecycle-composition.png?hl=ko![image]
+![image](https://github.com/mettew0585/self_study_log/assets/48712755/6cc2cc73-5df9-4f58-9463-e0e2e4110ba2)
 
 
 - composition :  a tree-structure of the composables that describe your UI.
@@ -20,7 +20,8 @@ fun MyComposable() {
     }
 }
 ```
-https://developer.android.com/static/images/jetpack/compose/lifecycle-hierarchy.png?hl=ko![image](https://github.com/mettew0585/self_study_log/assets/48712755/b6d2cd0a-5857-4bde-9124-a6810e61390e)
+
+![image](https://github.com/mettew0585/self_study_log/assets/48712755/5e67f560-e613-49fc-b08f-6393671fa8d8)
 
 - 컴포지션 내 MyComposable의 표현.
 
